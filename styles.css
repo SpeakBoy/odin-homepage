@@ -18,5 +18,82 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Roboto";
+}
+
+header {
+    height: 500px;
+    padding: 40px;
+    background: linear-gradient(172deg, #0891b2 65%, white calc(65% + 2px));
+}
+
+header .container {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary-portrait {
+    width: 300px;
+    height: 100%;
+    background-image: url("img/primary-portrait.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+
+.heading {
+    font-family: "Playfair Display";
+}
+
+.primary-portrait .heading,
+.screenshot .heading,
+.contact .heading
+{
+    color: white;
+}
+
+.primary-portrait .heading
+{
+    font-size: 48px;
+}
+
+.about-me {
+    height: 75%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.primary-portrait,
+.about-me {
+    box-shadow: 1px 1px 5px black;
+}
+
+.about-me h2 {
+    font-size: 32px;
+}
+
+.about-me p {
+    line-height: 1.5;
+}
+
+.about-me .links {
+    align-self: flex-end;
+    gap: 15px;
+}
+
+.links {
+    display: flex;
+}
+
+img {
+    width: 25px;
 }
 
