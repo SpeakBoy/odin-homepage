@@ -22,21 +22,25 @@
 }
 
 header {
-    height: 500px;
     padding: 40px;
     background: linear-gradient(172deg, #0891b2 65%, white calc(65% + 2px));
-}
-
-header .container {
-    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+header .container {
+    max-width: 1000px;
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    display: flex;
+    align-items: center;
+}
+
 .primary-portrait {
-    width: 300px;
-    height: 100%;
+    max-width: 400px;
+    width: 100%;
+    aspect-ratio: 4 / 5;
     background-image: url("img/primary-portrait.jpg");
     background-size: cover;
     background-position: center;
@@ -62,8 +66,8 @@ header .container {
 }
 
 .about-me {
-    height: 75%;
-    max-width: 400px;
+    max-width: 500px;
+    height: 50%;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -72,11 +76,14 @@ header .container {
 }
 
 .primary-portrait,
-.about-me {
+.about-me,
+.project {
     box-shadow: 1px 1px 5px black;
 }
 
-.about-me h2 {
+.about-me .heading,
+.projects > .heading,
+.project > .screenshot > .heading {
     font-size: 32px;
 }
 
@@ -97,3 +104,79 @@ img {
     width: 25px;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    gap: 20px;
+}
+
+.projects > .heading {
+    justify-self: flex-start;
+}
+
+.projects > .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project > .screenshot {
+    padding: 20px;
+    aspect-ratio: 5 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project > .screenshot > .heading {
+    text-align: center;
+}
+
+.project .details {
+    padding: 20px;
+    aspect-ratio: 2 / 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project .details .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project .links {
+    gap: 15px;
+}
+
+.red {
+    background-color: #9e1c1c;
+}
+
+.purple {
+    background-color: #7c75ca;
+}
+
+.green {
+    background-color: #5e8f4d;
+}
+
+.pink {
+    background-color: #c363b4;
+}
+
+.yellow {
+    background-color: #d88f39;
+}
+
+.blue {
+    background-color: #4ba2d2;
+}
