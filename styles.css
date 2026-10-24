@@ -32,7 +32,7 @@ header {
 header .container {
     max-width: 1000px;
     width: 100%;
-    aspect-ratio: 5 / 3;
+    aspect-ratio: 2 / 1;
     display: flex;
     align-items: center;
 }
@@ -49,15 +49,31 @@ header .container {
     justify-content: center;
 }
 
+.secondary-portrait {
+    max-width: 600px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-image: url("img/secondary-portrait.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .heading {
     font-family: "Playfair Display";
 }
 
 .primary-portrait .heading,
 .screenshot .heading,
-.contact .heading
+.contact .heading,
+.contact p
 {
     color: white;
+}
+
+img.phone-number,
+img.email {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 
 .primary-portrait .heading
@@ -66,12 +82,13 @@ header .container {
 }
 
 .about-me {
-    max-width: 500px;
-    height: 50%;
+    max-width: 600px;
+    max-height: 70%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: white;
 }
 
@@ -82,8 +99,9 @@ header .container {
 }
 
 .about-me .heading,
-.projects > .heading,
-.project > .screenshot > .heading {
+.projects > .container > .heading,
+.project > .screenshot > .heading,
+.contact .heading {
     font-size: 32px;
 }
 
@@ -93,11 +111,16 @@ header .container {
 
 .about-me .links {
     align-self: flex-end;
-    gap: 15px;
+    gap: 20px;
 }
 
 .links {
     display: flex;
+}
+
+.about-me img,
+.info .links img {
+    width: 35px;
 }
 
 img {
@@ -111,6 +134,10 @@ main {
 }
 
 .projects {
+    padding: 40px;
+}
+
+.projects .container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -122,10 +149,10 @@ main {
     justify-self: flex-start;
 }
 
-.projects > .container {
+.projects .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 30px;
 }
 
 .project > .screenshot {
@@ -153,8 +180,42 @@ main {
     justify-content: space-between;
 }
 
-.project .links {
+.project .links,
+.info .links {
     gap: 15px;
+}
+
+.contact {
+    background-color: #0891b2;
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact > .container {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+}
+
+.contact .info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.phone-and-mail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.phone-and-mail > .phone-number,
+.phone-and-mail > .email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .red {
