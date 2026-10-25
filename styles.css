@@ -22,7 +22,7 @@
 }
 
 header {
-    padding: 40px;
+    padding: 100px;
     background: linear-gradient(172deg, #0891b2 65%, white calc(65% + 2px));
     display: flex;
     justify-content: center;
@@ -32,7 +32,6 @@ header {
 header .container {
     max-width: 1000px;
     width: 100%;
-    aspect-ratio: 2 / 1;
     display: flex;
     align-items: center;
 }
@@ -45,8 +44,10 @@ header .container {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
+}
+
+.primary-portrait .heading {
+    text-align: center;
 }
 
 .secondary-portrait {
@@ -71,6 +72,10 @@ header .container {
     color: white;
 }
 
+.heading {
+    font-weight: normal;
+}
+
 img.phone-number,
 img.email {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
@@ -83,12 +88,13 @@ img.email {
 
 .about-me {
     max-width: 600px;
-    max-height: 70%;
-    height: 100%;
+    width: 100%;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     padding: 20px;
     justify-content: space-around;
+    gap: 20px;
     background-color: white;
 }
 
@@ -134,14 +140,14 @@ main {
 }
 
 .projects {
-    padding: 40px;
+    padding: 40px 100px;
 }
 
 .projects .container {
     display: flex;
     flex-direction: column;
-    width: 100%;
     max-width: 1000px;
+    width: 100%;
     gap: 20px;
 }
 
@@ -188,7 +194,7 @@ main {
 .contact {
     background-color: #0891b2;
     width: 100%;
-    padding: 40px;
+    padding: 40px 100px;
     display: flex;
     justify-content: center;
 }
@@ -197,6 +203,7 @@ main {
     max-width: 1000px;
     width: 100%;
     display: flex;
+    gap: 20px;
 }
 
 .contact .info {
@@ -240,4 +247,53 @@ main {
 
 .blue {
     background-color: #4ba2d2;
+}
+
+@media (500px <= width <= 1000px) {
+    header .container {
+        background-color: white;
+        box-shadow: 1px 1px 5px black;
+        display: block;
+        width: max-content;
+    }
+
+    .about-me {
+        box-shadow: none;
+        float: none;
+        display: block;
+        max-width: 1000px;
+    }
+
+    .primary-portrait {
+        margin-top: -60px;
+        margin-left: -60px;
+        width: 300px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        float: left;
+    }
+
+    .about-me p {
+        margin: 20px 0;
+    }
+
+    .about-me .links {
+        justify-content: end;
+    }
+
+    .primary-portrait .heading {
+        margin-right: -100%;
+    }
+
+    .about-me .heading {
+        text-align: center;
+    }
+
+    .projects .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .secondary-portrait {
+        aspect-ratio: auto;
+    }
 }
