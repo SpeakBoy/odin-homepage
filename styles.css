@@ -143,16 +143,12 @@ main {
     padding: 40px 100px;
 }
 
-.projects .container {
+.projects > .container {
     display: flex;
     flex-direction: column;
     max-width: 1000px;
     width: 100%;
     gap: 20px;
-}
-
-.projects > .heading {
-    justify-self: flex-start;
 }
 
 .projects .grid {
@@ -250,6 +246,13 @@ main {
 }
 
 @media (500px <= width <= 1000px) {
+    header,
+    .projects,
+    .contact {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
     header .container {
         background-color: white;
         box-shadow: 1px 1px 5px black;
@@ -266,7 +269,7 @@ main {
 
     .primary-portrait {
         margin-top: -60px;
-        margin-left: -60px;
+        margin-left: -40px;
         width: 300px;
         margin-right: 20px;
         margin-bottom: 10px;
@@ -295,5 +298,61 @@ main {
 
     .secondary-portrait {
         aspect-ratio: auto;
+    }
+}
+
+@media (width < 500px) {
+    .primary-portrait,
+    .about-me {
+        box-shadow: none;
+    }
+
+    header {
+        background: linear-gradient(172deg, #0891b2 40%, white calc(40% + 2px));
+    }
+    
+
+    header,
+    .projects {
+        padding: 40px;
+    }
+
+    header > .container {
+        flex-direction: column;
+    }
+
+    .about-me > .heading,
+    .about-me > .links,
+    .projects > .container > .heading,
+    .contact .heading,
+    .contact .links {
+        align-self: center;
+    }
+
+    .projects .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        padding: 40px 0 0;
+    }
+
+    .contact .info {
+        padding: 0 40px 20px;
+    }
+
+    .contact > .container {
+        flex-direction: column;
+    }
+
+    img.phone-number,
+    img.email {
+        display: none;
+    }
+
+    .phone-and-mail p {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
     }
 }
